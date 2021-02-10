@@ -24,8 +24,9 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new EfCarDal());
             foreach (var car in carManager.GetCarDetailDetails())
             {
-                Console.WriteLine("Aracın Markası: "+car.BrandName+" Renk: "+car.ColorName+" Günlük Fiyatı: "+car.DailyPrice+" TL");
+                Console.WriteLine("Aracın Adı: "+car.CarName+" Aracın Markası: "+car.BrandName+" Renk: "+car.ColorName+" Günlük Fiyatı: "+car.DailyPrice+" TL");
             }
+            
         }
         private static void BrandTest()
         {
@@ -35,6 +36,7 @@ namespace ConsoleUI
                 Console.WriteLine(brand.BrandName);
             }
         }
+        
         
         
     }
