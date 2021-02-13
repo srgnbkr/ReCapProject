@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -8,7 +10,7 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class ColorManager:IColorService
+    public class ColorManager : IColorService
     {
         IColorDal _colorDal;
 
@@ -17,31 +19,36 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
-        public void Add(Color color)
+        public IResult Add(Color color)
         {
             _colorDal.Add(color);
-            Console.WriteLine("Renk Eklendi");
+            return new SuccessResult(Messages.ColorAdded);
         }
 
-        public void Delete(Color color)
+        public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
+            return new SuccessResult(Messages.ColorDeleted);
         }
 
-        public List<Color> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
-            return _colorDal.GetAll();
+            if (DateTime.Now.Hour == 23)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorsListed);
         }
 
-        public Color GetCarsByColorId(int id)
+        public IDataResult<Color> GetCarsByColorId(int id)
         {
-            return _colorDal.Get(p=>p.ColorId==id);
+            return new SuccessDataResult<Color>(_colorDal.Get(p => p.ColorId == id), Messages.ColorsListed);
         }
 
-        public void Update(Color color)
+        public IResult Update(Color color)
         {
             _colorDal.Uptade(color);
-            Console.WriteLine("Renk Güncellendi");
+            return new  SuccessResult(Messages.ColorUpdated);
         }
     }
 }

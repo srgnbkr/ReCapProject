@@ -9,35 +9,86 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-
-            CarTest();
-            Console.WriteLine("*******************************");
-            BrandTest();
+            //UsersTest();
+            RentTest();
+            CustomerTest();
             
 
-            
-           
+
+
+
+
+
+
+
+
+
 
         }
-        private static void CarTest()
+        private static void UsersTest()
         {
-            CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetCarDetailDetails())
+            UserManager userManager = new UserManager(new EfUserDal());
+            var result = userManager.GetAllUsers();
+
+            if (result.Success==true)
             {
-                Console.WriteLine("Aracın Adı: "+car.CarName+" Aracın Markası: "+car.BrandName+" Renk: "+car.ColorName+" Günlük Fiyatı: "+car.DailyPrice+" TL");
+                Console.WriteLine(result.Message);
+                foreach (var user in result.Data)
+                {
+                    Console.WriteLine(user.FirstName+" "+user.LastName);
+                }
+                
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+        }
+        private static void RentTest()
+        {
+            RentManager rentManager = new RentManager(new EfRental());
+            var result = rentManager.Add(new Rental {CarId=6,CustomerId=2003,RentDate=new DateTime(2021,02,13),ReturnDate=new DateTime(2021,02,17) });
+            if (result.Success==true)
+            {
+                Console.WriteLine(result.Message);
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
             
         }
-        private static void BrandTest()
+        private static void CustomerTest()
         {
-            BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var brand in brandManager.GetAll())
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            var result = customerManager.GetAllCustomers();
+            if (result.Success==true)
             {
-                Console.WriteLine(brand.BrandName);
+                Console.WriteLine(result.Message);
+                foreach (var customer in result.Data)
+                {
+                    Console.WriteLine(customer.CompanyName);
+                }
+                
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
         
+
         
+            
         
+
+
+
     }
+
+
+
+
 }
+
+

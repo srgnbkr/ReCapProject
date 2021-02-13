@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -12,74 +14,66 @@ namespace Business.Concrete
 
     {
         ICarDal _carDal;
-        
 
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-            if (car.DailyPrice > 0)
-            {
-                _carDal.Add(car);
-                Console.WriteLine("Araç Sisteme Eklendi");
-            }
-            else
-            {
-                Console.WriteLine("Günlük Fiyat 0 Olamaz");
-            }
+            _carDal.Add(car);
+            return new SuccessResult(Messages.CarAdded);
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carDal.Delete(car);
-            Console.WriteLine("Araç Sistemden Silindi");
+            return new SuccessResult(Messages.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
-        }
-
-        public List<Car> GetAllByBrandId(int id)
-        {
-            return _carDal.GetAll(p => p.BrandId == id);
-        }
-
-        public List<Car> GetAllByColorId(int id)
-        {
-            return _carDal.GetAll(p => p.ColorId == id);
-        }
-
-        public List<Car> GetByDailyPrice(decimal min, decimal max)
-        {
-            return _carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max);
-        }
-
-        public List<Car> GetByModelYear(int year)
-        {
-            return _carDal.GetAll(p => p.ModelYear == year);
-        }
-
-        public List<CarDetailDto> GetCarDetailDetails()
-        {
-            return _carDal.GetCarDetails();
-        }
-
-        public void Update(Car car)
-        {
-            if (car.DailyPrice > 0)
+            if (DateTime.Now.Hour == 23)
             {
-                _carDal.Uptade(car);
-                Console.WriteLine("Araç Güncellendi");
+                return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
+        }
 
-            }
-            else
+        public IDataResult<Car> GetAllByBrandId(int id)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.BrandId == id),Messages.CarsListed);
+        }
+
+        public IDataResult<Car> GetAllByColorId(int id)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.ColorId == id), Messages.CarsListed);
+        }
+
+        public IDataResult<Car> GetByDailyPrice(decimal min, decimal max)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.DailyPrice >= min && p.DailyPrice <= max));
+        }
+
+        public IDataResult<Car> GetByModelYear(int year)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.ModelYear == year),Messages.CarsListed);
+        }
+
+        public IDataResult<List<CarDetailDto>> GetCarDetailDetails()
+        {
+            if (DateTime.Now.Hour==23)
             {
-                Console.WriteLine("Araç Değeri 0'dan Küçük Olmamalı");
+                return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
             }
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarsListed);
+        }
+
+        public IResult Update(Car car)
+        {
+            _carDal.Uptade(car);
+            return new SuccessResult(Messages.ColorUpdated);
         }
     }
 }
