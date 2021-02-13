@@ -11,7 +11,9 @@ namespace ConsoleUI
         {
             //UsersTest();
             RentTest();
+            Console.WriteLine("---------------------");
             CustomerTest();
+            
             
 
 
