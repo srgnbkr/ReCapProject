@@ -9,12 +9,11 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //UsersTest();
-            RentTest();
-            Console.WriteLine("---------------------");
-            CustomerTest();
             
-            
+
+
+
+
 
 
 
@@ -66,6 +65,7 @@ namespace ConsoleUI
             var result = customerManager.GetAllCustomers();
             if (result.Success==true)
             {
+                
                 Console.WriteLine(result.Message);
                 foreach (var customer in result.Data)
                 {
@@ -78,6 +78,7 @@ namespace ConsoleUI
                 Console.WriteLine(result.Message);
             }
         }
+        
         
 
         
