@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entities.DTOs
 {
-    class RentCarDetailDto
+    public class RentCarDetailDto
     {
     }
 }

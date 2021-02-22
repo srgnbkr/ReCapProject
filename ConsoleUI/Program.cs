@@ -9,6 +9,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //BrandTest();
             
 
 
@@ -25,6 +26,13 @@ namespace ConsoleUI
 
 
 
+        }
+        private static void BrandTest()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var result = brandManager.Add(new Brand { BrandName = "Ferrari" });
+            if (result.Success) { Console.WriteLine(result.Message); }
+            else { Console.WriteLine(result.Message); }
         }
         private static void UsersTest()
         {
