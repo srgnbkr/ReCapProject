@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DqmU+1BZdEylT+6nFp6WrlMzg82QsqMlhZm1e6NU+eXs5jrMcI1OiMpOs5qwesFOaW45KoyMDd6OpbOIqo1GZw==",
+  "dgSpecHash": "4Xqi2c62iktTHHYTrzVQsSqtajQCvVEh9l456vLswzZ5xbwqA1IY3i+RFnF11BM8YmmIuP0yGLaixd4IRz+FFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sbaki\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\sbaki\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

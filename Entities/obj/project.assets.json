@@ -6465,11 +6465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj",
+      "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj",
       "packagesPath": "C:\\Users\\sbaki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\obj\\",
+      "outputPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sbaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6486,8 +6486,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj"
+            "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj"
             }
           }
         }

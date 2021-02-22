@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj": {
+    "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\sbaki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sbaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\sbaki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sbaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -105,11 +105,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj"
+              "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj"
               },
-              "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj"
+              "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -149,14 +149,14 @@
         }
       }
     },
-    "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj": {
+    "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\sbaki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sbaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -173,8 +173,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj"
+              "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj"
               }
             }
           }
