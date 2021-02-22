@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj": {}
+    "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj": {
+    "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\sbaki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sbaki\\AppData\\Roaming\\NuGet\\NuGet.Config",

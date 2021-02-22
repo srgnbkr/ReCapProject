@@ -5976,11 +5976,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectUniqueName": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
       "projectName": "ConsoleUI",
-      "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
       "packagesPath": "C:\\Users\\sbaki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\ConsoleUI\\obj\\",
+      "outputPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\ConsoleUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sbaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5997,14 +5997,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Business\\Business.csproj"
+            "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Business\\Business.csproj"
             },
-            "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\sbaki\\Source\\Repos\\ReCapProject\\Entities\\Entities.csproj"
+            "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\sbaki\\source\\repos\\ReCapProject\\Entities\\Entities.csproj"
             }
           }
         }
