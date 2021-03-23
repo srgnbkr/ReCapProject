@@ -2,6 +2,7 @@
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidaiton;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
@@ -27,6 +28,7 @@ namespace Business.Concrete
 
         [SecuredOperation("admin")]
         [ValidationAspect(typeof(CarValidator))]
+        
         public IResult Add(Car car)
         {
            
@@ -49,27 +51,27 @@ namespace Business.Concrete
             }
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
         }
-
+        [CacheAspect]
         public IDataResult<Car> GetAllByBrandId(int id)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.BrandId == id),Messages.CarsListed);
         }
-
+        [CacheAspect]
         public IDataResult<Car> GetAllByColorId(int id)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.ColorId == id), Messages.CarsListed);
         }
-
+        [CacheAspect]
         public IDataResult<Car> GetByDailyPrice(decimal min, decimal max)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.DailyPrice >= min && p.DailyPrice <= max));
         }
-
+        [CacheAspect]
         public IDataResult<Car> GetByModelYear(int year)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.ModelYear == year),Messages.CarsListed);
         }
-
+        [CacheAspect]
         public IDataResult<List<CarDetailDto>> GetCarDetailDetails()
         {
             if (DateTime.Now.Hour==23)
