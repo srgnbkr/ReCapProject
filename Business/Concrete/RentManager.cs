@@ -5,6 +5,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,7 +48,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Rental>> GetAllRentCars()
         {
-            if (DateTime.Now.Hour==23)
+            if (DateTime.Now.Hour==5)
             {
                 return new ErrorDataResult<List<Rental>>(Messages.MaintenanceTime);
             }
@@ -56,11 +57,16 @@ namespace Business.Concrete
 
         public IDataResult<Rental> GetByRentDate(DateTime min, DateTime max)
         {
-            if (DateTime.Now.Hour==23)
+            if (DateTime.Now.Hour==5)
             {
                 return new ErrorDataResult<Rental>(Messages.MaintenanceTime);
             }
             return new SuccessDataResult<Rental>(_rentalDal.Get(p=>p.RentDate<=min && p.RentDate <= max),Messages.CarRentTimeListed);
+        }
+
+        public IDataResult<List<RentCarDetailDto>> GetCarDetail()
+        {
+            return new SuccessDataResult<List<RentCarDetailDto>>(_rentalDal.GetAllRentDetails(), Messages.CarsListed);
         }
 
         public IResult Update(Rental rental)

@@ -5,6 +5,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,6 +49,11 @@ namespace Business.Concrete
                 return new ErrorDataResult<Customer>(Messages.MaintenanceTime);
             }
             return new SuccessDataResult<Customer>(_customerDal.Get(p => p.CompanyName.Contains(key)),Messages.CustomerListed);
+        }
+
+        public IDataResult<List<CustomerDetailDto>> GetCustomerDetails()
+        {
+            return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetail(), Messages.CustomerListed);
         }
 
         public IResult Update(Customer customer)
