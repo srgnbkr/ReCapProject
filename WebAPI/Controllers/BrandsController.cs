@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
             if (result.Success) { return Ok(result); }
             return BadRequest(result.Message);
         }
-        [HttpGet("getbybrandid")]
+        [HttpGet("getbyid")]
         public IActionResult GetByBrandId(int id)
         {
             var result = _brandService.GetCarsByBrandId(id);

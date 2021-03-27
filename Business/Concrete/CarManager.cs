@@ -26,8 +26,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        [SecuredOperation("admin")]
-        [ValidationAspect(typeof(CarValidator))]
+        
         
         public IResult Add(Car car)
         {
@@ -45,36 +44,32 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour == 23)
-            {
-                return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
-            }
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
         }
-        [CacheAspect]
-        public IDataResult<Car> GetAllByBrandId(int id)
+        
+        public IDataResult<List<Car>> GetAllByBrandId(int id)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(p => p.BrandId == id),Messages.CarsListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.BrandId==id),Messages.CarsListed);
         }
-        [CacheAspect]
+        
         public IDataResult<Car> GetAllByColorId(int id)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.ColorId == id), Messages.CarsListed);
         }
-        [CacheAspect]
+        
         public IDataResult<Car> GetByDailyPrice(decimal min, decimal max)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.DailyPrice >= min && p.DailyPrice <= max));
         }
-        [CacheAspect]
+        
         public IDataResult<Car> GetByModelYear(int year)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.ModelYear == year),Messages.CarsListed);
         }
-        [CacheAspect]
+        
         public IDataResult<List<CarDetailDto>> GetCarDetailDetails()
         {
-            if (DateTime.Now.Hour==23)
+            if (DateTime.Now.Hour==5)
             {
                 return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
             }

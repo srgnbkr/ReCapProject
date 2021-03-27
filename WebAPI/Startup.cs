@@ -37,9 +37,15 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //AOP
+            //Autofac, Ninject,CastleWindsor, StructureMap, LightInject, DryInject -->IoC Container
+            //AOP
+            //Postsharp
             services.AddControllers();
+            //services.AddSingleton<IProductService,ProductManager>();
+            //services.AddSingleton<IProductDal, EfProductDal>();
 
-            
+            services.AddCors();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -57,12 +63,10 @@ namespace WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+
             services.AddDependencyResolvers(new ICoreModule[] {
-                new CoreModule()
-             });
-
-
-
+               new CoreModule()
+            });
 
         }
 
@@ -74,10 +78,13 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            
+
             app.UseAuthentication();
 
             app.UseAuthorization();
@@ -86,6 +93,8 @@ namespace WebAPI
             {
                 endpoints.MapControllers();
             });
+            //23.10 dersteyiz
         }
     }
 }
+    
