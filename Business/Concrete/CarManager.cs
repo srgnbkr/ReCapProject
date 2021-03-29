@@ -12,6 +12,7 @@ using Entities.DTOs;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -46,17 +47,23 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
         }
-        
-        public IDataResult<List<Car>> GetAllByBrandId(int id)
+
+        public IDataResult<List<Car>> GetAllByBrandId(int brandId)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.BrandId==id),Messages.CarsListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.BrandId == brandId), Messages.CarsListed);
         }
-        
-        public IDataResult<Car> GetAllByColorId(int id)
+
+        public IDataResult<List<CarDetailDto>> GetAllByColorId(int id)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(p => p.ColorId == id), Messages.CarsListed);
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails().Where(p=>p.ColorId==id).ToList());
         }
-        
+
+        public IDataResult<List<CarDetailDto>> GetAllCarDetailsByFilter(int brandId, int colorId)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails()
+                .Where(x => x.BrandId == brandId && x.ColorId == colorId).ToList());
+        }
+
         public IDataResult<Car> GetByDailyPrice(decimal min, decimal max)
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.DailyPrice >= min && p.DailyPrice <= max));
@@ -80,6 +87,11 @@ namespace Business.Concrete
         {
             _carDal.Uptade(car);
             return new SuccessResult(Messages.CarUpdated);
+        }
+
+        IDataResult<List<CarDetailDto>> ICarService.GetAllByBrandId(int brandId)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails().Where(p => p.BrandId == brandId).ToList());
         }
     }
 }
