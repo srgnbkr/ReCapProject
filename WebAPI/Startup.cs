@@ -1,4 +1,4 @@
-using Business.Abstract;
+﻿using Business.Abstract;
 using Business.Concrete;
 using Core.DependencyResolvers;
 using Core.Extensions;
@@ -37,13 +37,8 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //AOP
-            //Autofac, Ninject,CastleWindsor, StructureMap, LightInject, DryInject -->IoC Container
-            //AOP
-            //Postsharp
             services.AddControllers();
-            //services.AddSingleton<IProductService,ProductManager>();
-            //services.AddSingleton<IProductDal, EfProductDal>();
+            
 
             services.AddCors();
 
@@ -65,7 +60,7 @@ namespace WebAPI
                 });
 
             services.AddDependencyResolvers(new ICoreModule[] {
-               new CoreModule()
+                new CoreModule()
             });
 
         }
@@ -78,8 +73,9 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(ApplicationBuilder => ApplicationBuilder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyOrigin());
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 
@@ -93,8 +89,6 @@ namespace WebAPI
             {
                 endpoints.MapControllers();
             });
-            //23.10 dersteyiz
         }
     }
 }
-    

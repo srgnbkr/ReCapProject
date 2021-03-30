@@ -18,27 +18,28 @@ namespace DataAccess.Concrete.EntityFramework
             using (ECarTradeContext context = new ECarTradeContext())
             {
                 var result = from cr in context.Cars
-                             join c in context.Colors
-                             on cr.ColorId equals c.ColorId
                              join b in context.Brands
                              on cr.BrandId equals b.BrandId
+                             join co in context.Colors
+                             on cr.ColorId equals co.ColorId
                              select new CarDetailDto
                              {
                                  CarId = cr.CarId,
                                  BrandId = b.BrandId,
+                                 ColorId = co.ColorId,
                                  BrandName = b.BrandName,
-                                 ColorId = c.ColorId,
                                  CarName = cr.CarName,
-                                 ColorName = c.ColorName,
+                                 ColorName = co.ColorName,
                                  DailyPrice = cr.DailyPrice,
-                                 ModelYear = cr.ModelYear
-
-
-
-
+                                 ModelYear = cr.ModelYear,
+                                 Descriptions = cr.Descriptions,
+                                 ImagePath = context.CarImages.Where(x => x.CarId == cr.CarId).FirstOrDefault().ImagePath
 
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
+
+
+
 
             }
         }

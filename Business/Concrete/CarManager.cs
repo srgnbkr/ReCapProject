@@ -73,7 +73,12 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Car>(_carDal.Get(p => p.ModelYear == year),Messages.CarsListed);
         }
-        
+
+        public IDataResult<List<CarDetailDto>> GetCarByCarId(int carId)
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails().Where(p=>p.CarId==carId).ToList(), Messages.CarsListed);
+        }
+
         public IDataResult<List<CarDetailDto>> GetCarDetailDetails()
         {
             if (DateTime.Now.Hour==5)
