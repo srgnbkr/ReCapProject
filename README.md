@@ -7,6 +7,8 @@ Bu katman Cross Cutting Concern, Generic Repository, Jwt vb. yapıların AOP yö
 
 # Entities
 Projenizin veri erişim katmanıdır. Bu katman veri tabanı ilişkilerinin yapıldığı, Contextlerin belirlendiği ve veri tabanı erişim teknolojilerinin kullanıldığı (EFCore, MongoDb vb.) katmandır.
+# DataAccess
+Projenizin veri erişim katmanıdır. Bu katman veri tabanı ilişkilerinin yapıldığı, Contextlerin belirlendiği ve veri tabanı erişim teknolojilerinin kullanıldığı (EFCore, MongoDb vb.) katmandır.
 
 # Business
 Projenizin tüm iş kurallarının yazılacağı, entegrasyon mekanizmalarının yerleştirileceği katmandır. CQRS yaklaşımı sayesinde tüm kuralları esnek bir yapıda sunabilirsiniz. İster monolitik istenirse de microservis mimarilerine uygun olarak hizmet sunumu gerçekleştirilebilir.
