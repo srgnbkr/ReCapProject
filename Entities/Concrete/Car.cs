@@ -17,6 +17,7 @@ namespace Entities.Concrete
         public decimal DailyPrice { get; set; }
         public string Descriptions { get; set; }
         public string CarName { get; set; }
+        public int CarFindeksScore { get; set; }
 
     }
 }

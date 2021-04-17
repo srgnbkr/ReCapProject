@@ -24,7 +24,9 @@ namespace DataAccess.Concrete.EntityFramework
                              {
                                  FirstName = ur.FirstName,
                                  LastName = ur.LastName,
-                                 CompanyName = cs.CompanyName
+                                 CompanyName = cs.CompanyName,
+                                 Status = ur.Status ? "Aktif":"Pasif"
+                                 
 
 
                              };

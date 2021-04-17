@@ -17,6 +17,7 @@ namespace Business.Abstract
 
         IDataResult<Rental> GetByRentDate(DateTime min,DateTime max);
         IDataResult<List<RentCarDetailDto>> GetCarDetail();
+        IResult IsRentable(int carId);
 
 
     }

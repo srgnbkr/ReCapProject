@@ -23,6 +23,7 @@ namespace DataAccess.Concrete.EntityFramework
                              on r.CustomerId equals cus.CustomerId
                              join us in context.Users
                              on cus.UserId equals us.UserId
+
                              select new RentCarDetailDto
                              {
                                  RentId = r.RentId,
@@ -30,7 +31,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  FirstName = us.FirstName,
                                  LastName = us.LastName,
                                  RentDate = r.RentDate,
-                                 ReturnDate = r.ReturnDate
+                                 ReturnDate = r.ReturnDate,
+                                
                                  
 
 

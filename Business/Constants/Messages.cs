@@ -25,7 +25,7 @@ namespace Business.Constants
         public static string CustomerUpdated => "Müşteri Güncellendi";
         public static string CarRentListed => "Kiralanan Araçlar Listelendi";
         public static string CarRental => "Araç Kiralandı";
-        public static string CarDontRental => "Araç Kiralanamaz";
+        public static string CarDontRental => "Araç Başka Müşteri Tarafından Kiralanmış";
         public static string CarRentDeleletd => "Araç Kiralama Bilgisi Silindi";
         public static string CarRentUptated => "Araç Kiralama Bilgisi Güncellendi";
         public static string CarRentTimeListed => "Araçlar Tarih Aralığına Göre Listelendi";
@@ -54,6 +54,11 @@ namespace Business.Constants
         public static string AccessTokenCreated => "Tokan Oluşturuldu";
         public static string UserAlreadyExists => "Kullanıcı Mevcut";
         public static string PasswordError => "Parola Hatalı ";
+
+        public static string PaymentAdd => "Ödeme Alındı";
+        public static string PaymentList => "Ödeme Listelenedi";
+
+        public static string CarRentable => "Araç Kiralanabilir";
     }
 }
 
